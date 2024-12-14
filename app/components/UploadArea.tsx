@@ -2,25 +2,26 @@
 
 import { Button } from "@radix-ui/themes";
 import React, { useCallback, useState } from "react";
-import { useDropzone } from "react-dropzone";
+import { FileRejection, useDropzone } from "react-dropzone";
 import ErrorMessage from "./ErrorMessage";
 import Spinner from "./Spinner";
-import { useRouter } from "next/navigation";
 
 const UploadArea = () => {
   const [file, setFile] = useState<File | null>(null); // Single file state
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setSubmitting] = useState(false);
-  const router = useRouter();
 
-  const onDrop = useCallback((acceptedFiles: File[], rejectedFiles: any[]) => {
-    setError(null); // Reset any previous errors
-    if (rejectedFiles.length > 0) {
-      setError("Some files were not accepted due to unsupported file types.");
-      return;
-    }
-    setFile(acceptedFiles[0] || null); // Only set the first accepted file
-  }, []);
+  const onDrop = useCallback(
+    (acceptedFiles: File[], rejectedFiles: FileRejection[]) => {
+      setError(null); // Reset any previous errors
+      if (rejectedFiles.length > 0) {
+        setError("Some files were not accepted due to unsupported file types.");
+        return;
+      }
+      setFile(acceptedFiles[0] || null); // Only set the first accepted file
+    },
+    []
+  );
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
@@ -46,7 +47,7 @@ const UploadArea = () => {
           body: data,
         });
         if (!res.ok) throw new Error(await res.text());
-      } catch (error: any) {
+      } catch (error: unknown) {
         console.log(error);
       }
 

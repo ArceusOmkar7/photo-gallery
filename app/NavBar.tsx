@@ -1,18 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import React, { useState } from "react";
+// import { usePathname } from "next/navigation";
+import React from "react";
 import { IoMdImages } from "react-icons/io";
 import LoginCardButton from "./components/LoginCardButton";
-import { Button } from "@radix-ui/themes";
+// import { Button } from "@radix-ui/themes";
 // import classNames from "classnames";
 // import { Button, Dialog, Flex, Text, TextField } from "@radix-ui/themes";
 
-interface link {
-  label: string;
-  href: string;
-}
+// interface link {
+//   label: string;
+//   href: string;
+// }
 
 const NavBar = () => {
   // const currentPath = usePathname();

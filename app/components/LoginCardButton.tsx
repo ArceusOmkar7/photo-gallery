@@ -26,7 +26,7 @@ const LoginCardButton = () => {
           </label>
         </form>
         <Dialog.Description>
-          Don't have an account? <Link href="/signup">SignUp</Link>
+          {"Don't have an account?"} <Link href="/signup">SignUp</Link>
         </Dialog.Description>
         <Flex gap="3" mt="4" justify="end">
           <Dialog.Close>

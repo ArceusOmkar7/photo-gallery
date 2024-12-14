@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { FileMetadata } from "@/app/FileMetaData";
 
 const mongoURI = process.env.DATABASE_URL;
@@ -33,7 +33,7 @@ const fileMetadataModel =
     })
   );
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const data: FileMetadata[] = await fileMetadataModel.find();
     if (data.length === 0) {

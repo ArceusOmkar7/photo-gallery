@@ -74,7 +74,7 @@ const GalleryArea = () => {
       <div className="flex flex-col justify-between items-start gap-2">
         <Heading>Gallery</Heading>
         <Button
-          onClick={(e) => {
+          onClick={() => {
             fetchImages();
           }}
         >
