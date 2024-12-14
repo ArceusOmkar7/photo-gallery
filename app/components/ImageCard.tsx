@@ -22,7 +22,7 @@ const ImageCard = ({
   const parsedBlurPath = blurPath.replace(/\\/g, "/");
   console.log(parsedPath);
   return (
-    <div>
+    <div className="flex flex-col gap-2 items-center justify-end">
       <Image
         src={parsedPath}
         alt={originalFilename || "unnamed"}
@@ -33,7 +33,7 @@ const ImageCard = ({
         placeholder="blur"
       />
       <Link href={parsedPath} download={true} target="_blank">
-        <Button>Download</Button>
+        <Button className="hover:cursor-pointer">Download</Button>
       </Link>
     </div>
   );

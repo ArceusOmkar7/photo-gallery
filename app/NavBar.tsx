@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
 import { IoMdImages } from "react-icons/io";
 import LoginCardButton from "./components/LoginCardButton";
+import { Button } from "@radix-ui/themes";
 // import classNames from "classnames";
 // import { Button, Dialog, Flex, Text, TextField } from "@radix-ui/themes";
 
@@ -14,7 +15,7 @@ interface link {
 }
 
 const NavBar = () => {
-  const currentPath = usePathname();
+  // const currentPath = usePathname();
 
   // const links: link[] = [
   //   { label: "Home", href: "/" },
@@ -42,11 +43,11 @@ const NavBar = () => {
   //     </ul>
   //   </nav>
   // );
-
   return (
-    <nav className="flex justify-between border-b mb-5 px-5 h-14 items-center">
-      <Link href="/">
-        <IoMdImages size={32} />
+    <nav className="flex justify-between border-b border-zinc-700 mb-5 p-5 h-14 items-center">
+      <Link href="/" className="flex items-center gap-2 justify-around">
+        <IoMdImages size={48} />
+        <span>Media Storage</span>
       </Link>
       <LoginCardButton />
     </nav>

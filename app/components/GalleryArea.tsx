@@ -71,7 +71,7 @@ const GalleryArea = () => {
   };
   if (showGallery) {
     return (
-      <div>
+      <div className="flex flex-col justify-between items-start gap-2">
         <Heading>Gallery</Heading>
         <Button
           onClick={(e) => {
@@ -80,7 +80,7 @@ const GalleryArea = () => {
         >
           <IoReload />
         </Button>
-        <Grid columns="3" rows="repeat(2, auto)" width="auto" my="5">
+        <Grid columns="3" rows="repeat(2, auto)" width="auto" my="5" gap="5">
           {getImagesCards()}
         </Grid>
       </div>
