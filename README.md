@@ -13,7 +13,7 @@ This project is a web application for uploading, managing, and displaying image 
 ## Getting Started
 
 ### Prerequisites
-- **Node.js** (v16 or later)
+- **Node.js**
 - **npm** or **yarn** package manager
 - **MongoDB** for storing file metadata
 
